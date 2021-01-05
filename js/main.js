@@ -156,7 +156,7 @@ const limit = 12
 function search(search, limit = 12, offset = 0) {
     resultLine.style.display = 'block'
     searchActive.classList.add('none')
-    const newKeyword = input.value
+    // const newKeyword = input.value
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${search}&limit=${limit}&offset=${offset}`)
     .then(resp => resp.json())
     .then(object => {
@@ -177,7 +177,7 @@ function search(search, limit = 12, offset = 0) {
             const min = Math.min(object.data.length, 12)
             createArraySearch(object, min)
             showMore(search)
-            showTitle(newKeyword,h2)
+            showTitle(search,h2)
         }
     })
     .catch(error => console.error(error))
@@ -210,37 +210,19 @@ async function showWordTrends(){
             event.preventDefault()
             const results = document.getElementById('results')
             results.innerHTML = ''
-            const searchTitle = document.getElementById('titleSearch')
-            searchTitle.innerHTML = event.target.textContent
+            // const h2 = document.getElementById('titleSearch');
+            // h2.innerHTML = event.target.textContent
             search(event.target.textContent);
         })         
         wordTrends.appendChild(span)
         if (index < (array.length - 1)) {
             wordTrends.appendChild(document.createTextNode(","))
         };
-        // console.log(array.length)
-        // console.log(index)
+
     })
 }
 
 showWordTrends()
-
-
-// //trending words
-// const trendingWords = document.querySelector('.themes')
-
-// trendingWords.forEach(item => item.addEventListener('click', (event) => {
-//     results.innerHTML = ''
-//     input.value = ''
-//     const word = event.target.textContent.slice(0, -2)
-//     number = 0
-//     searchTitle.textContent = firstUppercase(word)
-//     search(word)
-// }))
-
-// function firstUppercase(string){
-//     return string.charAt(0).toUpperCase() + string.slice(1);
-// }
 
 function getInfo(element, object, container) {
     const infoGif = {
@@ -252,7 +234,6 @@ function getInfo(element, object, container) {
     renderResult(infoGif, container)
     return infoGif
 }
-
 
 function renderResult(result, globalContainer) {
     const container = document.createElement('div')

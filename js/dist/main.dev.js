@@ -194,8 +194,8 @@ function search(search) {
   var limit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 12;
   var offset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
   resultLine.style.display = 'block';
-  searchActive.classList.add('none');
-  var newKeyword = input.value;
+  searchActive.classList.add('none'); // const newKeyword = input.value
+
   fetch("https://api.giphy.com/v1/gifs/search?api_key=".concat(apiKey, "&q=").concat(search, "&limit=").concat(limit, "&offset=").concat(offset)).then(function (resp) {
     return resp.json();
   }).then(function (object) {
@@ -216,7 +216,7 @@ function search(search) {
       var min = Math.min(object.data.length, 12);
       createArraySearch(object, min);
       showMore(search);
-      showTitle(newKeyword, h2);
+      showTitle(search, h2);
     }
   })["catch"](function (error) {
     return console.error(error);
@@ -262,9 +262,9 @@ function showWordTrends() {
             span.addEventListener('click', function (event) {
               event.preventDefault();
               var results = document.getElementById('results');
-              results.innerHTML = '';
-              var searchTitle = document.getElementById('titleSearch');
-              searchTitle.innerHTML = event.target.textContent;
+              results.innerHTML = ''; // const h2 = document.getElementById('titleSearch');
+              // h2.innerHTML = event.target.textContent
+
               search(event.target.textContent);
             });
             wordTrends.appendChild(span);
@@ -273,8 +273,7 @@ function showWordTrends() {
               wordTrends.appendChild(document.createTextNode(","));
             }
 
-            ; // console.log(array.length)
-            // console.log(index)
+            ;
           });
 
         case 9:
@@ -285,19 +284,7 @@ function showWordTrends() {
   });
 }
 
-showWordTrends(); // //trending words
-// const trendingWords = document.querySelector('.themes')
-// trendingWords.forEach(item => item.addEventListener('click', (event) => {
-//     results.innerHTML = ''
-//     input.value = ''
-//     const word = event.target.textContent.slice(0, -2)
-//     number = 0
-//     searchTitle.textContent = firstUppercase(word)
-//     search(word)
-// }))
-// function firstUppercase(string){
-//     return string.charAt(0).toUpperCase() + string.slice(1);
-// }
+showWordTrends();
 
 function getInfo(element, object, container) {
   var infoGif = {
