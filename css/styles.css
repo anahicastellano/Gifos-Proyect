@@ -909,6 +909,7 @@ footer {
     font-size: 16px;
     /* margin: 0 auto 95px; */
     width: initial;
+    text-transform: capitalize;
   }
 
   .result-line {

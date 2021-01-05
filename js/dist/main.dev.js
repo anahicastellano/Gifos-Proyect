@@ -260,17 +260,16 @@ function showWordTrends() {
             span.innerText = currentValue;
             span.className = "themes";
             span.addEventListener('click', function (event) {
-              console.log(event.target.textContent);
+              search(event.target.textContent);
             });
             wordTrends.appendChild(span);
 
             if (index < array.length - 1) {
-              wordTrends.appendChild(document.createTextNode(" , "));
+              wordTrends.appendChild(document.createTextNode(","));
             }
 
-            ;
-            console.log(array.length);
-            console.log(index);
+            ; // console.log(array.length)
+            // console.log(index)
           });
 
         case 9:
