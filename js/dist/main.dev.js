@@ -281,23 +281,19 @@ function showWordTrends() {
   });
 }
 
-showWordTrends(); //trending words
-
-var trendingWords = document.querySelector('.themes');
-trendingWords.forEach(function (item) {
-  return item.addEventListener('click', function (event) {
-    results.innerHTML = '';
-    input.value = '';
-    var word = event.target.textContent.slice(0, -2);
-    number = 0;
-    searchTitle.textContent = firstUppercase(word);
-    search(search);
-  });
-});
-
-function firstUppercase(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+showWordTrends(); // //trending words
+// const trendingWords = document.querySelector('.themes')
+// trendingWords.forEach(item => item.addEventListener('click', (event) => {
+//     results.innerHTML = ''
+//     input.value = ''
+//     const word = event.target.textContent.slice(0, -2)
+//     number = 0
+//     searchTitle.textContent = firstUppercase(word)
+//     search(word)
+// }))
+// function firstUppercase(string){
+//     return string.charAt(0).toUpperCase() + string.slice(1);
+// }
 
 function getInfo(element, object, container) {
   var infoGif = {
