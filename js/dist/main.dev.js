@@ -264,7 +264,7 @@ function showWordTrends() {
               var results = document.getElementById('results');
               results.innerHTML = '';
               var searchTitle = document.getElementById('titleSearch');
-              searchTitle.innerText = event.textContent;
+              searchTitle.innerHTML = event.textContent;
               search(event.target.textContent);
             });
             wordTrends.appendChild(span);

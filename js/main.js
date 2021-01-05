@@ -211,7 +211,7 @@ async function showWordTrends(){
             const results = document.getElementById('results')
             results.innerHTML = ''
             const searchTitle = document.getElementById('titleSearch')
-            searchTitle.innerText = event.textContent
+            searchTitle.innerHTML = event.textContent
             search(event.target.textContent);
         })         
         wordTrends.appendChild(span)
