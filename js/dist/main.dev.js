@@ -504,7 +504,7 @@ function arrowLeft() {
 
 function arrowRight() {
   if (localStorage.getItem('mode') === 'light') {
-    next.src = 'images/button-slider-right.svg';
+    next.src = 'images/Button-Slider-right.svg';
   } else {
     next.src = 'images/button-slider-right-md-noct.svg';
   }
@@ -1384,7 +1384,7 @@ function lightMode() {
   camera.src = 'images/camara.svg';
   film.src = 'images/pelicula.svg';
   prev.src = 'images/button-slider-left.svg';
-  next.src = 'images/button-slider-right.svg';
+  next.src = 'images/Button-Slider-right.svg';
   closeImage.src = 'images/close.svg';
   closeGifo.src = 'images/close.svg';
 }
