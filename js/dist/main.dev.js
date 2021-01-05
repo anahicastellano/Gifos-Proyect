@@ -260,6 +260,8 @@ function showWordTrends() {
             span.innerText = currentValue;
             span.className = "themes";
             span.addEventListener('click', function (event) {
+              results.innerHTML = '';
+              input.value = '';
               search(event.target.textContent);
             });
             wordTrends.appendChild(span);
@@ -1375,7 +1377,7 @@ mode.addEventListener('click', function () {
 });
 
 function darkMode() {
-  logo.src = 'images/Logo-modo-noc.svg';
+  logo.src = 'images/logo-mobile-modo-noct.svg';
   searchImage.src = 'images/icon-search-modo-noct.svg';
   searchImageNav.src = 'images/icon-search-modo-noct.svg';
   createGifo.src = 'images/CTA-crear-gifo-modo-noc.svg';

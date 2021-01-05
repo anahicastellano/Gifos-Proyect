@@ -207,6 +207,8 @@ async function showWordTrends(){
         span.className = "themes";
 
         span.addEventListener('click', (event) => {
+            results.innerHTML = ''
+            input.value = ''
             search(event.target.textContent);
         })       
         wordTrends.appendChild(span)
@@ -1117,7 +1119,7 @@ mode.addEventListener('click', () => {
 })
 
 function darkMode() {
-    logo.src = 'images/Logo-modo-noc.svg'
+    logo.src = 'images/logo-mobile-modo-noct.svg'
     searchImage.src = 'images/icon-search-modo-noct.svg'
     searchImageNav.src = 'images/icon-search-modo-noct.svg'
     createGifo.src = 'images/CTA-crear-gifo-modo-noc.svg'
