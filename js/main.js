@@ -205,38 +205,36 @@ async function showWordTrends(){
         const span = document.createElement('span');
         span.innerText = currentValue;
         span.className = "themes";
-        wordTrends.appendChild(span),
-        wordTrends.appendChild(document.createTextNode(", "))
+
+        span.addEventListener('click', (event) => {
+            console.log(event.target.textContent);
+        })        
+        wordTrends.appendChild(span)
+        if (index < (array.length - 1)) {
+            wordTrends.appendChild(document.createTextNode(" , "))
+        };
         console.log(array.length)
+        console.log(index)
     })
 }
 
-
 showWordTrends()
-//     const p = document.createElement('p');
-//     p.innerText = firstResults.slice(', ');
-//     p.className = "themes";
-
-//     wordTrends.appendChild(p);
-//     p.addEventListener('click', event => search(event)) //no funciona
-// }
-
 
 //trending words
-// const trendingWords = document.querySelectorAll('.wordList')
+const trendingWords = document.querySelector('.themes')
 
-// trendingWords.forEach(item => item.addEventListener('click', (event) => {
-//     results.innerHTML = ''
-//     input.value = ''
-//     const word = event.target.textContent.slice(0, -2)
-//     number = 0
-//     searchTitle.textContent = firstUppercase(word)
-//     search(word)
-// }))
+trendingWords.forEach(item => item.addEventListener('click', (event) => {
+    results.innerHTML = ''
+    input.value = ''
+    const word = event.target.textContent.slice(0, -2)
+    number = 0
+    searchTitle.textContent = firstUppercase(word)
+    search(search)
+}))
 
-// function firstUppercase(string){
-//     return string.charAt(0).toUpperCase() + string.slice(1);
-// }
+function firstUppercase(string){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function getInfo(element, object, container) {
     const infoGif = {
