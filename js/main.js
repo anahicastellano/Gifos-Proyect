@@ -194,31 +194,48 @@ function createArraySearch(object, min) {
 
 //PALABRAS TENDENCIAS
 
-const  wordTrends = document.getElementById('wordTrends');
+const  wordTrends = document.getElementById('wordList');
 
 async function showWordTrends(){
     const url = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
     const response = await fetch(url);
     const results = await response.json();
     const firstResults = results.data.slice(0,5);
-    console.log(firstResults);
-        
-    for (let i = 0; i < firstResults.length; i++) {
-        firstResults[i] = firstResults[i].charAt(0).toUpperCase() + firstResults[i].slice(1);
-    }
+    firstResults.forEach(function callback(currentValue, index, array) {
+        const span = document.createElement('span');
+        span.innerText = currentValue;
+        span.className = "themes";
+    }),   
 
-    const p = document.createElement('p');
-    p.innerText = firstResults.join(', ');
-    p.className = "themes";
-
-    wordTrends.appendChild(p);
-    wordTrends.addEventListener('click', event => search(event)) //no funciona
-}
+    wordTrends.appendChild(span),
+    wordTrends.appendChild(document.createTextNode(","))
+};
 
 showWordTrends()
+//     const p = document.createElement('p');
+//     p.innerText = firstResults.slice(', ');
+//     p.className = "themes";
+
+//     wordTrends.appendChild(p);
+//     p.addEventListener('click', event => search(event)) //no funciona
+// }
+
 
 //trending words
+const trendingWords = document.querySelectorAll('.wordList')
 
+trendingWords.forEach(item => item.addEventListener('click', (event) => {
+    results.innerHTML = ''
+    input.value = ''
+    const word = event.target.textContent.slice(0, -2)
+    number = 0
+    searchTitle.textContent = firstUppercase(word)
+    search(word)
+}))
+
+function firstUppercase(string){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function getInfo(element, object, container) {
     const infoGif = {
@@ -381,7 +398,7 @@ prev.addEventListener('click', () => {
 })
 
 next.addEventListener('click', () => {
-    position = Math.max(position - width * count, width * (listElems.length - (nCarousel - 3)))
+    position = Math.max(position - width * count, width * (listElems.length - (nCarousel - 5)))
     carousel.style.marginLeft = position + 'vw'
 })
 

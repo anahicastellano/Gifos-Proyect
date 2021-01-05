@@ -256,11 +256,20 @@ header .respmenu input:checked ~ nav {
   line-height: 25px;
   color: #572EE5;
   text-align: center;
-  margin: 0 75px 50px;
-  width: 225px;
-  height: 50px;
   cursor: pointer;
-  text-transform: capitalize;
+  justify-content: flex-start;
+}
+
+.wordList{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 25px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  margin-bottom: 21px;
 }
 
 
@@ -889,6 +898,11 @@ footer {
   .wordTrends {
     margin: 7px 0 74px 20%;
     font-size: 16px;
+  }
+
+  .wordList {
+    display: flex;
+    flex-flow: row wrap;
   }
 
   .themes{

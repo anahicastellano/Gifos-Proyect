@@ -235,10 +235,10 @@ function createArraySearch(object, min) {
 } //PALABRAS TENDENCIAS
 
 
-var wordTrends = document.getElementById('wordTrends');
+var wordTrends = document.getElementById('wordList');
 
 function showWordTrends() {
-  var url, response, results, firstResults, i, p;
+  var url, response, results, firstResults;
   return regeneratorRuntime.async(function showWordTrends$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
@@ -255,21 +255,13 @@ function showWordTrends() {
         case 6:
           results = _context2.sent;
           firstResults = results.data.slice(0, 5);
-          console.log(firstResults);
+          firstResults.forEach(function callback(currentValue, index, array) {
+            var span = document.createElement('span');
+            span.innerText = currentValue;
+            span.className = "themes";
+          }), wordTrends.appendChild(span), wordTrends.appendChild(document.createTextNode(","));
 
-          for (i = 0; i < firstResults.length; i++) {
-            firstResults[i] = firstResults[i].charAt(0).toUpperCase() + firstResults[i].slice(1);
-          }
-
-          p = document.createElement('p');
-          p.innerText = firstResults.join(', ');
-          p.className = "themes";
-          wordTrends.appendChild(p);
-          wordTrends.addEventListener('click', function (event) {
-            return search(event);
-          }); //no funciona
-
-        case 15:
+        case 9:
         case "end":
           return _context2.stop();
       }
@@ -277,7 +269,30 @@ function showWordTrends() {
   });
 }
 
-showWordTrends(); //trending words
+;
+showWordTrends(); //     const p = document.createElement('p');
+//     p.innerText = firstResults.slice(', ');
+//     p.className = "themes";
+//     wordTrends.appendChild(p);
+//     p.addEventListener('click', event => search(event)) //no funciona
+// }
+//trending words
+
+var trendingWords = document.querySelectorAll('.wordList');
+trendingWords.forEach(function (item) {
+  return item.addEventListener('click', function (event) {
+    results.innerHTML = '';
+    input.value = '';
+    var word = event.target.textContent.slice(0, -2);
+    number = 0;
+    searchTitle.textContent = firstUppercase(word);
+    search(word);
+  });
+});
+
+function firstUppercase(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function getInfo(element, object, container) {
   var infoGif = {
@@ -462,7 +477,7 @@ prev.addEventListener('click', function () {
   carousel.style.marginLeft = position + 'vw';
 });
 next.addEventListener('click', function () {
-  position = Math.max(position - width * count, width * (listElems.length - (nCarousel - 3)));
+  position = Math.max(position - width * count, width * (listElems.length - (nCarousel - 5)));
   carousel.style.marginLeft = position + 'vw';
 });
 prev.addEventListener('mouseover', function () {
