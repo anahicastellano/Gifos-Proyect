@@ -206,7 +206,8 @@ async function showWordTrends(){
         span.innerText = currentValue;
         span.className = "themes";
         wordTrends.appendChild(span),
-        wordTrends.appendChild(document.createTextNode(","))
+        wordTrends.appendChild(document.createTextNode(", "))
+        console.log(array.length)
     })
 }
 

@@ -907,8 +907,8 @@ footer {
 
   .themes{
     font-size: 16px;
-    margin: 0 auto 95px;
-    width: 420px;
+    /* margin: 0 auto 95px; */
+    width: initial;
   }
 
   .result-line {

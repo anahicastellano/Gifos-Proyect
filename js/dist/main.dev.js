@@ -259,7 +259,8 @@ function showWordTrends() {
             var span = document.createElement('span');
             span.innerText = currentValue;
             span.className = "themes";
-            wordTrends.appendChild(span), wordTrends.appendChild(document.createTextNode(","));
+            wordTrends.appendChild(span), wordTrends.appendChild(document.createTextNode(", "));
+            console.log(array.length);
           });
 
         case 9:
