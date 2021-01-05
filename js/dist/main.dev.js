@@ -259,7 +259,8 @@ function showWordTrends() {
             var span = document.createElement('span');
             span.innerText = currentValue;
             span.className = "themes";
-          }), wordTrends.appendChild(span), wordTrends.appendChild(document.createTextNode(","));
+            wordTrends.appendChild(span), wordTrends.appendChild(document.createTextNode(","));
+          });
 
         case 9:
         case "end":
@@ -269,7 +270,6 @@ function showWordTrends() {
   });
 }
 
-;
 showWordTrends(); //     const p = document.createElement('p');
 //     p.innerText = firstResults.slice(', ');
 //     p.className = "themes";
@@ -277,22 +277,18 @@ showWordTrends(); //     const p = document.createElement('p');
 //     p.addEventListener('click', event => search(event)) //no funciona
 // }
 //trending words
-
-var trendingWords = document.querySelectorAll('.wordList');
-trendingWords.forEach(function (item) {
-  return item.addEventListener('click', function (event) {
-    results.innerHTML = '';
-    input.value = '';
-    var word = event.target.textContent.slice(0, -2);
-    number = 0;
-    searchTitle.textContent = firstUppercase(word);
-    search(word);
-  });
-});
-
-function firstUppercase(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+// const trendingWords = document.querySelectorAll('.wordList')
+// trendingWords.forEach(item => item.addEventListener('click', (event) => {
+//     results.innerHTML = ''
+//     input.value = ''
+//     const word = event.target.textContent.slice(0, -2)
+//     number = 0
+//     searchTitle.textContent = firstUppercase(word)
+//     search(word)
+// }))
+// function firstUppercase(string){
+//     return string.charAt(0).toUpperCase() + string.slice(1);
+// }
 
 function getInfo(element, object, container) {
   var infoGif = {
