@@ -488,7 +488,7 @@ function hoverArrowLeft() {
 
 function hoverArrowRight() {
   if (localStorage.getItem('mode') === 'light') {
-    next.src = 'images/button-slider-right-hover.svg';
+    next.src = 'images/Button-Slider-right-hover.svg';
   } else {
     next.src = 'images/button-slider-right-md-noct-hover.svg';
   }
