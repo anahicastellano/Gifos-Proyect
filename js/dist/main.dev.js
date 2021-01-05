@@ -263,7 +263,7 @@ function showWordTrends() {
               event.preventDefault();
               var results = document.getElementById('results');
               results.innerHTML = '';
-              var searchTitle = document.getElementById('searchTitle');
+              var searchTitle = document.getElementById('titleSearch');
               searchTitle.innerText = event.textContent;
               search(event.target.textContent);
             });

@@ -210,7 +210,7 @@ async function showWordTrends(){
             event.preventDefault()
             const results = document.getElementById('results')
             results.innerHTML = ''
-            const searchTitle = document.getElementById('searchTitle')
+            const searchTitle = document.getElementById('titleSearch')
             searchTitle.innerText = event.textContent
             search(event.target.textContent);
         })         
