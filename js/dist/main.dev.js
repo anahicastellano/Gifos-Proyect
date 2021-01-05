@@ -260,8 +260,11 @@ function showWordTrends() {
             span.innerText = currentValue;
             span.className = "themes";
             span.addEventListener('click', function (event) {
+              event.preventDefault();
+              var results = document.getElementById('results');
               results.innerHTML = '';
-              input.value = '';
+              var searchTitle = document.getElementById('searchTitle');
+              searchTitle.innerText = event.textContent;
               search(event.target.textContent);
             });
             wordTrends.appendChild(span);

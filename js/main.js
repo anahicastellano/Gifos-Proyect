@@ -207,10 +207,13 @@ async function showWordTrends(){
         span.className = "themes";
 
         span.addEventListener('click', (event) => {
+            event.preventDefault()
+            const results = document.getElementById('results')
             results.innerHTML = ''
-            input.value = ''
+            const searchTitle = document.getElementById('searchTitle')
+            searchTitle.innerText = event.textContent
             search(event.target.textContent);
-        })       
+        })         
         wordTrends.appendChild(span)
         if (index < (array.length - 1)) {
             wordTrends.appendChild(document.createTextNode(","))
@@ -221,6 +224,7 @@ async function showWordTrends(){
 }
 
 showWordTrends()
+
 
 // //trending words
 // const trendingWords = document.querySelector('.themes')
