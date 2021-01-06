@@ -258,6 +258,9 @@ header .respmenu input:checked ~ nav {
   text-align: center;
   cursor: pointer;
   justify-content: flex-start;
+  width: initial;
+  text-transform: capitalize;
+  margin-right: 3px;
 }
 
 .wordList{
