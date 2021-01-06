@@ -345,7 +345,7 @@ showMoreButton.addEventListener('click', (event) => {
     if(input.value === '') {
         number += 12
         showMore(searchTitle.innerText)
-        search(searchTitle.innerText)
+        search(searchTitle.innerText,12, number)
     } else {
         number += 12
         showMore(input.value)

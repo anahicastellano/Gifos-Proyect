@@ -277,7 +277,7 @@ header .respmenu input:checked ~ nav {
 
 
 .result-line {
-  width: 41.87vw;
+  width: 338px;
   min-width: 157px;
   height: 1px;
   margin: -10px auto 43px auto;
@@ -1628,4 +1628,24 @@ footer {
   .repeat {
     font-size: 11px;
   }
+
+}
+
+@media screen and (max-width: 1440px) {
+  .search-container-nav .lens {
+    right: -4.61vw;
+}
+
+.lens {
+  right: -7.61vw;
+}
+
+.prev {
+  top: -5px;
+}
+
+.next {
+  top: -5px;
+}
+
 }
