@@ -101,6 +101,7 @@ a, span {
 
 .nav-bar .checkbox-nav:checked ~ .list-nav {
   height: 484px;
+  transition: height 1s ease-in-out;
 }
 
 .nav-bar .checkbox-nav:checked ~ .checkbox-label .fa-times {
@@ -749,7 +750,7 @@ footer {
   }
 
   .search-container-nav .lens {
-    right: 0.39vw
+    right: -2.61vw;
   }
   .img-logo {
     width: 59.1px;
@@ -776,7 +777,7 @@ footer {
     display: flex;
     justify-content: space-around;
     height: 90px;
-    width: 33.82vw;
+    /* width: 33.82vw; */
     min-width: 470px;
     max-width: 700px;
     top: 0;
@@ -884,13 +885,13 @@ footer {
   .lens{
     margin-left: 0px;
     position: absolute;
-    right: 1.39vw;
+    right: -5.61vw;
   }
 
   .close {
     margin-left: 0px;
     position: absolute;
-    right: 1.39vw;
+    right: -5.61vw;
   }
 
   .title-trending {
@@ -1629,9 +1630,6 @@ footer {
     font-size: 11px;
   }
 
-}
-
-@media screen and (min-width: 1440px) {
   .search-container-nav .lens {
     right: -4.61vw;
 }
@@ -1647,5 +1645,10 @@ footer {
 .next {
   top: -5px;
 }
+
+}
+
+@media screen and (max-width: 1440px) {
+
 
 }

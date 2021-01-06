@@ -344,14 +344,13 @@ showMoreButton.addEventListener('click', (event) => {
     event.preventDefault()
     number = document.getElementById("results").childElementCount
     console.log(number)
+    number += 12
     if(input.value === '') {
-        number += 12
         showMore(searchTitle.innerText)
         search(searchTitle.innerText,12, number)
     } else {
-        number += 12
         showMore(input.value)
-        search(input.value)
+        search(input.value,12, number)
     }
 })
 
