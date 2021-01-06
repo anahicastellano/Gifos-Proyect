@@ -339,7 +339,7 @@ async function showMore(word) {
     }
 }
 
-const searchTitle = document.getElementById('searchTitle')
+const searchTitle = document.getElementById('titleSearch')
 showMoreButton.addEventListener('click', (event) => {
     event.preventDefault()
     if(input.value === '') {

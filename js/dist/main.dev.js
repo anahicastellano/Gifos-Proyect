@@ -427,7 +427,7 @@ function showMore(word) {
   }, null, null, [[0, 11]]);
 }
 
-var searchTitle = document.getElementById('searchTitle');
+var searchTitle = document.getElementById('titleSearch');
 showMoreButton.addEventListener('click', function (event) {
   event.preventDefault();
 
