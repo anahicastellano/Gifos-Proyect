@@ -430,6 +430,7 @@ function showMore(word) {
 var searchTitle = document.getElementById('titleSearch');
 showMoreButton.addEventListener('click', function (event) {
   event.preventDefault();
+  number = document.getElementById("results").childElementCount;
   console.log(number);
 
   if (input.value === '') {

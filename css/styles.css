@@ -223,7 +223,7 @@ header .respmenu input:checked ~ nav {
   color: #9CAFC3;
   border-radius: 27px;
 }
-.suggest-container .separator {
+.suggest-container .dividing-line{
   width: 91.65%;
   height: 3px;
   margin: 0 auto 14px auto;
@@ -1631,7 +1631,7 @@ footer {
 
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .search-container-nav .lens {
     right: -4.61vw;
 }

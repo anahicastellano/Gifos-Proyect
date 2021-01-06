@@ -342,6 +342,7 @@ async function showMore(word) {
 const searchTitle = document.getElementById('titleSearch')
 showMoreButton.addEventListener('click', (event) => {
     event.preventDefault()
+    number = document.getElementById("results").childElementCount
     console.log(number)
     if(input.value === '') {
         number += 12
