@@ -226,10 +226,10 @@ header .respmenu input:checked ~ nav {
 }
 .suggest-container .dividing-line{
   width: 91.65%;
-  height: 3px;
+  height: 1px;
   margin: 0 auto 14px auto;
   opacity: 0.5;
-  border: 1px solid #9CAFC3;
+  background-color: #9CAFC3
 }
 
 .suggestions {
@@ -750,7 +750,7 @@ footer {
   }
 
   .search-container-nav .lens {
-    right: -2.61vw;
+    right: -4.61vw;
   }
   .img-logo {
     width: 59.1px;
@@ -1159,7 +1159,7 @@ footer {
     position: relative;
     right: 1.3vw;
     cursor: pointer;
-    top: -45px;
+    top: -6px;
   }
 
   .carousel {
@@ -1231,7 +1231,7 @@ footer {
     left: calc(1.3vw + 5px);
     background-color: transparent;
     cursor: pointer;
-    top: -45px;
+    top: -6px;
   }
 
   .max-gifo {
@@ -1648,7 +1648,41 @@ footer {
 
 }
 
-@media screen and (max-width: 1440px) {
+@media (min-width: 1512px){
 
+  .search-container-nav .lens {
+    right: -3.61vw;
+}
+
+.lens {
+  right: -5.61vw;
+}
+
+.close {
+  right: -5.61vw;
+}
+
+.prev {
+  top: -54px;
+}
+
+.next {
+  top: -54px;
+}
 
 }
+
+@media (min-width: 1600px) {
+  .search-container-nav .lens {
+    right: 0.39vw;
+}
+
+.lens {
+  right: 1.39vw;
+}
+
+.close {
+  right: 1.39vw;
+}
+}
+
